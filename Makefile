@@ -10,6 +10,8 @@ PYTHON_INSTALLED := $(shell command -v $(PYTHON_VERSION_REQ) 2> /dev/null)
 .PHONY: clean-neo4j-db-data:
 
 dev: venv install
+	@printf "Checkking out goodbooks-10k git submodule"
+	git submodule update --init --recursive
 	@printf "\n\nDevelopment Environment is now setup\n"
 	@printf "Run 'source $(VENV)/bin/activate' to enter virtual environment\n"
 
