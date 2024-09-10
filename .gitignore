@@ -1,3 +1,9 @@
+# neo4j docker mapped directories
+neo4j_db/data
+neo4j_db/import
+neo4j_db/logs
+neo4j_db/plugins
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

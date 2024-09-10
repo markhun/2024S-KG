@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "book-recommendations"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Markus Hunner", email = "26381538+markhun@users.noreply.github.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "prompt-toolkit",
+]
+optional-dependencies.dev = [
+  "jupyterlab",
+  "black",
+  "isort",
+  "ipython",
+]
+optional-dependencies.test = [
+  "pytest",
+]
+
+
+[project.urls]
+Documentation = "https://github.com/Markus Hunner/book-recommendations#readme"
+Issues = "https://github.com/Markus Hunner/book-recommendations/issues"
+Source = "https://github.com/Markus Hunner/book-recommendations"
+
+[tool.hatch.version]
+path = "src/book_recommendations/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/book_recommendations tests}"
+
+[tool.coverage.run]
+source_pkgs = ["book_recommendations", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/book_recommendations/__about__.py",
+]
+
+[tool.coverage.paths]
+book_recommendations = ["src/book_recommendations", "*/book-recommendations/src/book_recommendations"]
+tests = ["tests", "*/book-recommendations/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
