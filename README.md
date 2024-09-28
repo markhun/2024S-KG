@@ -1,5 +1,7 @@
 # 2024S-KG - Book Recommendations
 
+![(web app presentation video)](./web-app-presentation.gif)
+
 ## Running the book recommendations web app
 
 ### 1. Ensure external dependencies are installed
