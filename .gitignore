@@ -1,3 +1,6 @@
+# additional tooliong
+.bin
+
 # neo4j docker mapped directories
 neo4j_db/data
 neo4j_db/import
