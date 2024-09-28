@@ -23,10 +23,10 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "prompt-toolkit",
+  "streamlit",
+  "pillow",
 ]
 optional-dependencies.dev = [
-  "jupyterlab",
   "black",
   "isort",
   "ipython",
@@ -34,7 +34,17 @@ optional-dependencies.dev = [
 optional-dependencies.test = [
   "pytest",
 ]
+optional-dependencies.dataprep = [
+  "jupyterlab",
+  "tqdm",
+  "sparqlwrapper",
+  "pandas",
+  "neo4j-rust-ext",
+  "seaborn",
+]
 
+[project.scripts]
+book-recommendations-app = "book_recommendations.run_app:main"
 
 [project.urls]
 Documentation = "https://github.com/Markus Hunner/book-recommendations#readme"
